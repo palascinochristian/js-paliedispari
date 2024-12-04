@@ -20,6 +20,7 @@ if (isPalindrome(word)) {
 }
 // Altrimenti dirò che non lo è
 else {
-    alert("La parola inserita non è palindroma")
-}
+    alert("La parola inserita non è palindroma!")
+} 
+
 
