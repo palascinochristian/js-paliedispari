@@ -15,13 +15,23 @@ function isEven(num) {
     return false;
 }
 
-// Chiedo all'utente di scegliere tra pari e dispari
+// Chiedo all'utente di scegliere tra pari e dispari ( + verifica)
 
-const userChoice = prompt("Scegli tra pari o dispari");
+let userChoice = prompt("Scegli tra pari o dispari").toLowerCase();
+// Se l'utente inserisce qualcosa che sia diverso sia da pari o dispari lo costringo
+// con un ciclo a inserire il valore corretto
+while (userChoice !== "pari" && userChoice !== "dispari") {
+    userChoice = prompt("Scelta non valida. Scegli tra pari o dispari").toLowerCase();
+}
 
-// Chiedo all'utente di scegliere un numero compreso tra 1 e 5
+// Chiedo all'utente di scegliere un numero compreso tra 1 e 5 (+ verifica)
 
-const userNum = Number(prompt("Inserisci un numero da 1 a 5"));
+let userNum = Number(prompt("Inserisci un numero da 1 a 5"));
+// Se l'utente inserisce un numero non compreso tra 1 e 5 , o non inserisce qualcosa che non sia un numero
+//costringo con un ciclo a inserire il valore corretto
+while (isNaN(userNum) || userNum < 1 || userNum > 5) {
+    userNum = Number(prompt("Numero non valido. Inserisci un numero da 1 a 5"));
+}
 
 // Richiano la funzione per assegnare il numero random compreso tra 1 e 5 per la CPU
 
@@ -32,7 +42,7 @@ const cpuNum = randomNum(1, 5);
 let sum = cpuNum + userNum;
 console.log(sum)
 
-// Utilizzo la funzione , se è pari (true) assegno "pari" a sumResult, altrimenti assegno "dispari" a sumResult.
+// Utilizzo la funzione dentro un IF , se è pari (true) assegno "pari" a sumResult, altrimenti assegno "dispari" a sumResult.
 let sumResult;
 if (isEven(sum)) {
     sumResult = "pari"
