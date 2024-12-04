@@ -40,7 +40,6 @@ const cpuNum = randomNum(1, 5);
 // Eseguo la somma del numero dell'utente e del numero della CPU
 
 let sum = cpuNum + userNum;
-console.log(sum)
 
 // Utilizzo la funzione dentro un IF , se è pari (true) assegno "pari" a sumResult, altrimenti assegno "dispari" a sumResult.
 let sumResult;
